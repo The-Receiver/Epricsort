@@ -35,10 +35,8 @@ public class Epricsort {
 			for (int i = consec; i < (wall-1); i++){
 				int first = hello[i];
 				int next = hello[i+1];
-				if (first > next){
+				if (first > next)
 					swap(i, i+1, hello);
-					consec = 0;
-				}
 				else
 					consec++;
 			}
