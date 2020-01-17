@@ -5,6 +5,8 @@
  */
 package epricsort;
 
+import java.util.Random;
+
 /**
  *
  * @author eric
@@ -15,21 +17,51 @@ public class Epricsort {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
+	
 		// TODO code application logic here
 		
-		int[] tosort = {60,62,41,15,52,47,45,49};
-		epricsort(tosort);
-		System.out.println();
-		for (int i = 0; i < tosort.length; i++){
-			System.out.print(tosort[i] + " ");
-		}
+		//testrandom(32);
+		//testrandom(64);
+		
+		//Total time: 1 second
+		//testrandom(16384);
+		
+		//Total time: 4 seconds
+		//testrandom(32768);
+		
+		//Total time: 13, 17 seconds
+		//testrandom(65536);
+		
+		//Total time: 55 seconds
+		//testrandom(131072);
+			
 
+	}
+	
+	public static void testsort(int[] test){
+		epricsort(test);
+		System.out.println();
+		for (int i = 0; i < test.length; i++){
+			//System.out.print(test[i] + " ");
+		}
+	
+	}
+	
+	public static void testrandom(int n){
+		int[] test = new int[n];
+		Random rng = new Random();
+		
+		for(int i = 0; i < test.length; i++) {
+		test[i] = rng.nextInt(100);
+		}
+	
+		testsort(test);
+	
 	}
 	
 	static void epricsort(int[] hello){
 		int consec = 0;
-		int wall = hello.length;
-		
+		int wall = hello.length;	
 		while (consec != (wall - 1)){
 			consec = 0;
 			for (int i = consec; i < (wall-1); i++){
